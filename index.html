@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<link rel="stylesheet" href="styleindex.css">
+<body>
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="#" class="navbar-link">Home</a></li>
+            <li><a href="about.html" class="navbar-link">About</a></li>
+            <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+    </nav>
+    <input type="text" id="input" placeholder="Put value ( Like; 2+3/4*5 ) and press enter" style="width: 300px;">
+    <br><br>
+    <div id="answer">Answer: <br> </div>
+
+    <script>
+        const input = document.getElementById('input');
+        const answer = document.getElementById('answer');
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+            if (input.value.trim() === '') {
+                alert('Please enter a valid expression.');
+                return;
+            }
+            try {
+                const result = eval(input.value);
+                answer.textContent = 'Answer: ' + result;
+            } catch (error) {
+                answer.textContent = 'Answer: Error';
+            }
+            }
+        });
+        
+        
+    </script>
+</body>
+<footer>
+    <p>&copy; 2025 My calculator. All rights reserved. <br>  <br>Made by Muhammad Arsalan Shabbir</p>
+</footer>
+</html>
+
